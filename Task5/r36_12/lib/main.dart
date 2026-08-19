@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:task_products/core/router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:task_products/core/routing/router.dart';
 
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
-  runApp(const MyApp());
+  final sharedPreferences = await SharedPreferences.getInstance();
+  runApp(MyApp(sharedPreferences: sharedPreferences));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  SharedPreferences sharedPreferences;
+  MyApp({super.key, required this.sharedPreferences});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Products',
       debugShowCheckedModeBanner: false,
-      routerConfig: AppRouter.router,
+      routerConfig: AppRouter.router(sharedPreferences),
     );
   }
 }
-

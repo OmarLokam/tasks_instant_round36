@@ -7,7 +7,7 @@ final class ProductsInitialState extends ProductsState {}
 final class ProductsLoadingState extends ProductsState {}
 
 final class ProductsLoadedState extends ProductsState {
-  final List<ProductsModel> products;
+  final List<Products> products;
   ProductsLoadedState({required this.products});
 }
 
