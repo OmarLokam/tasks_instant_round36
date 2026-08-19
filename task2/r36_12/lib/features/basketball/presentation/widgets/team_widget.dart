@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task2_baskball_score/features/cubit/counter_cubit.dart';
-
-import '../../core/constant.dart';
+import '../../../../core/constant.dart';
+import '../cubit/counter_cubit.dart';
 import 'button_widget.dart';
 
 class TeamWidget extends StatelessWidget {

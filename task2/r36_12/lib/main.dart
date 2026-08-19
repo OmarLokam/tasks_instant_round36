@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task2_baskball_score/features/presentation/basketball_screen.dart';
 
-import 'features/cubit/counter_cubit.dart';
+import 'features/basketball/presentation/cubit/counter_cubit.dart';
+import 'features/basketball/presentation/screens/basketball_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,23 +24,4 @@ class MyApp extends StatelessWidget {
     );
   }
 
-
-  void reset() {
-    // setState(() {
-    //   teamAScore = 0;
-    //   teamBScore = 0;
-    // });
-  }
-
-  void savePreviousScore() {
-    // previousTeamAScore = teamAScore;
-    // previousTeamBScore = teamBScore;
-  }
-
-  void undo() {
-    // setState(() {
-    //   teamAScore = previousTeamAScore;
-    //   teamBScore = previousTeamBScore;
-    // });
-  }
 }

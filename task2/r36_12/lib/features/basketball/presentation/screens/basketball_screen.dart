@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task2_baskball_score/features/cubit/counter_cubit.dart';
-import 'package:task2_baskball_score/features/widgets/team_widget.dart';
-
-import '../../core/constant.dart';
+import '../../../../core/constant.dart';
+import '../cubit/counter_cubit.dart';
 import '../widgets/button_widget.dart';
+import '../widgets/team_widget.dart';
 
 class BasketballScreen extends StatelessWidget {
   const BasketballScreen({super.key});
