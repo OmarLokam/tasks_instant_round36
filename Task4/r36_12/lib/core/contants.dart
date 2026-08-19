@@ -30,6 +30,8 @@ double fontSize40 = 40;
 double fontSize30 = 30;
 double fontSize25 = 25;
 double fontSize20 = 20;
+double fontSize18 = 18;
+double fontSize16 = 16;
 double fontSize15 = 15;
 double fontSize13 = 13;
 double fontSize12 = 12;
@@ -38,6 +40,7 @@ double fontSize12 = 12;
 double iconSize30 = 30;
 double iconSize25 = 25;
 double iconSize20 = 20;
+double iconSize18 = 18;
 
 //Border Radius
 double borderRadius20 = 20;

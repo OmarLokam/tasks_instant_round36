@@ -6,4 +6,9 @@ class Images {
   static const String veggieBurgerImage = "images/veggie_burger.png";
   static const String chickenBurgerImage = "images/chicken_burger.png";
   static const String friedChickenBurgerImage = "images/fried_chicken_burger.png";
+  static const String wavingHandIcon = "images/waving_hand_icon.png";
+  static const String rocketIcon = "images/rocket_icon.png";
+  static const String googleIcon = "images/google_icon.png";
+  static const String iosIcon = "images/ios_icon.png";
+  static const String phoneIcon = "images/phone_icon.png";
 }
