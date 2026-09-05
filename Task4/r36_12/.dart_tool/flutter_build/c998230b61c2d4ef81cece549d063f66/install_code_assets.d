@@ -1,1 +1,0 @@
- D:\\New\ Flutter\ Projects\\meal_app\\.dart_tool\\flutter_build\\c998230b61c2d4ef81cece549d063f66\\native_assets.json: 

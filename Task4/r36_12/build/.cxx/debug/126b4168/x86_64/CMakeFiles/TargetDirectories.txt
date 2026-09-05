@@ -1,2 +1,0 @@
-D:/New Flutter Projects/food_app/build/.cxx/debug/126b4168/x86_64/CMakeFiles/edit_cache.dir
-D:/New Flutter Projects/food_app/build/.cxx/debug/126b4168/x86_64/CMakeFiles/rebuild_cache.dir

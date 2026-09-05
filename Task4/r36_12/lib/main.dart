@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'core/router.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+
+import 'core/routing/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Food App",
       routerConfig:AppRouter.router,
+      builder: EasyLoading.init(),
     );
   }
 }
