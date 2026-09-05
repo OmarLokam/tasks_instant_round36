@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../data/products_model.dart';
+import '../../data/models/products_model.dart';
 import '../cubit/products_cubit.dart';
 import '../widgets/product_item.dart';
 
@@ -60,10 +60,9 @@ class ProductShimmer extends StatelessWidget {
 }
 
 class ProductsList extends StatelessWidget {
+  final List<Products> productsList;
+
   const ProductsList({super.key, required this.productsList});
-
-  final List<ProductsModel> productsList;
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

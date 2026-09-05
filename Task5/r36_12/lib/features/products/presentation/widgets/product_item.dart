@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../data/products_model.dart';
+import '../../data/models/products_model.dart';
 
 class ProductItem extends StatelessWidget {
-  final ProductsModel product;
+  final Products product;
 
   const ProductItem({super.key, required this.product});
 
@@ -32,11 +32,16 @@ class ProductItem extends StatelessWidget {
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(18),
                 ),
-                child: Image.network(
-                  product.image,
-                  height: 190,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 35),
+                    child: Image.network(
+                      product.images.first,
+                      height: 150,
+                      width: 150,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
                 ),
               ),
 
@@ -47,12 +52,18 @@ class ProductItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     //favorite
-                    CircleAvatar(
-                      radius: 18,
-                      backgroundColor: Colors.white,
-                      child: Icon(
-                        Icons.favorite_border,
-                        color: Colors.grey.shade700,
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Colors.black),
+                      ),
+                      child: CircleAvatar(
+                        radius: 18,
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          Icons.favorite_border,
+                          color: Colors.grey.shade700,
+                        ),
                       ),
                     ),
                     //discount
@@ -64,6 +75,9 @@ class ProductItem extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           color: Colors.white,
+                          border: Border.all(
+                            color: Colors.black
+                          ),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
@@ -80,8 +94,7 @@ class ProductItem extends StatelessWidget {
             ],
           ),
 
-
-          //category, name, rating, price, btn add to cart
+          //category, title, rating, price, btn add to cart
           Padding(
             padding: const EdgeInsets.all(14),
             child: Column(
@@ -95,9 +108,9 @@ class ProductItem extends StatelessWidget {
 
                 const SizedBox(height: 6),
 
-                //name
+                //title
                 Text(
-                  product.name,
+                  product.title,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 19,
@@ -110,12 +123,12 @@ class ProductItem extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "(${product.reviewsCount})",
+                      "(${product.reviews?.length})",
                       style: TextStyle(color: Colors.grey.shade600),
                     ),
                     const SizedBox(width: 6),
                     Text(
-                      product.rating.toStringAsFixed(1),
+                      "(${product.rating})",
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(width: 4),
@@ -130,7 +143,7 @@ class ProductItem extends StatelessWidget {
                   children: [
                     if (product.hasDiscount)
                       Text(
-                        "\$${product.oldPrice!.toStringAsFixed(0)}",
+                        "\$${product.originalPrice.toStringAsFixed(2)}",
                         style: const TextStyle(
                           decoration: TextDecoration.lineThrough,
                           color: Colors.grey,
@@ -138,7 +151,7 @@ class ProductItem extends StatelessWidget {
                       ),
                     if (product.hasDiscount) const SizedBox(width: 8),
                     Text(
-                      "\$${product.price.toStringAsFixed(0)}",
+                      "\$${product.price.toStringAsFixed(2)}",
                       style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
